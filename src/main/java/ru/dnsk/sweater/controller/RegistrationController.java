@@ -31,8 +31,8 @@ public class RegistrationController {
         User existUser = repository.findByUsername(user.getUsername());
 
         if (existUser != null) {
-            model.addAttribute("existUserMessageError", "User exist");
-            return "/registration";
+            model.addAttribute("message", "User exist");
+            return "registration";
         } else {
             user.setActive(true);
             user.setRoles(Collections.singleton(Role.USER));
