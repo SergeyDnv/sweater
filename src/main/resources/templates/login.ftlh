@@ -11,7 +11,8 @@
     <br><br>
 </div>-->
 
-    <@l.login "/login" />
-    <hr>
-    <a href="/registration">Registration</a>
+    <div class="mb-3">
+        <h5>Login page</h5>
+    </div>
+    <@l.login "/login" false/>
 </@c.page>

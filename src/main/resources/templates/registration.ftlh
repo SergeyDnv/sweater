@@ -5,5 +5,8 @@
 
     ${message!""}
 
-    <@l.login "/registration" />
+    <div class="mb-3">
+        <h5>Registration</h5>
+    </div>
+    <@l.login "/registration" true/>
 </@c.page>
