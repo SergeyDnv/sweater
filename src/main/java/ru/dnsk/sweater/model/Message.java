@@ -1,6 +1,9 @@
 package ru.dnsk.sweater.model;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "message")
@@ -8,9 +11,13 @@ public class Message {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
 
+    @NotBlank(message = "Fill the message")
+    @Length(max = 2048, message = "Message is long")
     private String text;
+    @NotBlank(message = "Fill the tag")
+    @Length(max = 255, message = "Tag is long")
     private String tag;
     private String fileName;
 
@@ -31,11 +38,11 @@ public class Message {
         return author != null ? author.getUsername() : "<none>";
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

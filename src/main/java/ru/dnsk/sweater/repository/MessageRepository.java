@@ -5,6 +5,6 @@ import ru.dnsk.sweater.model.Message;
 
 import java.util.List;
 
-public interface MessageRepository extends JpaRepository<Message, Integer> {
+public interface MessageRepository extends JpaRepository<Message, Long> {
     List<Message> findAllByTag(String tag);
 }
